@@ -1,0 +1,14 @@
+USE hw3;
+
+SELECT * FROM products;
+
+SELECT name, phone FROM shippers;
+
+SELECT round(AVG(price), 2) AS average_price, max(price) AS max_price, min(price) AS min_price FROM products;
+
+SELECT distinct category_id, price FROM products order by price DESC LIMIT 10;
+
+SELECT count(*) AS number_product_price_20_100 from products where price>=20 AND price<=100;
+
+SELECT count(supplier_id) AS number_products, round(AVG(price), 2) AS average_price 
+FROM products group by supplier_id;
